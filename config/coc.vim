@@ -52,6 +52,14 @@ function! CocJumpAndRefresh(action) abort
 endfunction
 
 function! CocRefreshFileBuffer(timer) abort
+  if expand('%:p') =~# '/\$metadata\$/'
+    execute "normal! \<C-o>"
+    echohl WarningMsg
+    echom 'C# metadata source is virtual and cannot be opened by this Coc/OmniSharp setup. Use K for hover docs or gr for references.'
+    echohl None
+    return
+  endif
+
   if &buftype ==# '' && expand('%:p') !=# '' && filereadable(expand('%:p'))
     silent! edit
   endif
