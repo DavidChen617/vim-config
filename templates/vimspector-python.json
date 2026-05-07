@@ -1,0 +1,12 @@
+{
+  "configurations": {
+    "Python: current file": {
+      "adapter": "debugpy",
+      "configuration": {
+        "request": "launch",
+        "program": "${file}",
+        "console": "integratedTerminal"
+      }
+    }
+  }
+}

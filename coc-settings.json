@@ -1,0 +1,11 @@
+{
+  "python.defaultInterpreterPath": "python3",
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.formatting.provider": "black",
+  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "suggest.noselect": false,
+  "suggest.enablePreselect": true,
+  "diagnostic.virtualText": true
+}
