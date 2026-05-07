@@ -58,4 +58,4 @@ if [ ! -x "$omnisharp_data/server/OmniSharp" ]; then
     > "$omnisharp_data/downloadinfo.json"
 fi
 
-python3 "$pack_dir/vimspector/install_gadget.py" --enable-python
+python3 "$pack_dir/vimspector/install_gadget.py" --enable-python --force-enable-csharp

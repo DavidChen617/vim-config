@@ -12,3 +12,4 @@ coc-snippets
 
 vimspector gadgets:
 debugpy
+netcoredbg

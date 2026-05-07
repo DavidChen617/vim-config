@@ -27,6 +27,7 @@ Personal Vim configuration managed as a Git repository.
 - Completion, hover, diagnostics, rename, code actions and go-to-definition through `coc.nvim` and `coc-omnisharp`
 - Formatting through OmniSharp/Coc
 - Project commands through `dotnet`
+- Debugging through `vimspector` and `netcoredbg`
 
 Useful C# keys:
 
@@ -34,6 +35,11 @@ Useful C# keys:
 - `<Space>ct`: `dotnet test`
 - `<Space>cr`: `dotnet run`
 - `<Space>p`: format C# buffer
+- `<Space>cv`: insert a C# `.vimspector.json` template into the current buffer
+
+C# debug expects the project to be built first. Copy
+`templates/vimspector-csharp.json` to `.vimspector.json` in the project root and
+replace `CHANGE_ME.dll` in `program` with your built assembly name.
 
 ## System Requirements
 

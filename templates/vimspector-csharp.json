@@ -1,0 +1,22 @@
+{
+  "configurations": {
+    "C#: launch dll": {
+      "adapter": "netcoredbg",
+      "filetypes": ["cs"],
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceRoot}/bin/Debug/net10.0/CHANGE_ME.dll",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceRoot}",
+        "env": {}
+      },
+      "breakpoints": {
+        "exception": {
+          "user-unhandled": "N",
+          "all": "N"
+        }
+      }
+    }
+  }
+}

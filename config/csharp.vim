@@ -10,8 +10,10 @@ augroup csharp_dotnet_commands
   autocmd FileType cs nnoremap <buffer><silent> <leader>cb :DotnetBuild<CR>
   autocmd FileType cs nnoremap <buffer><silent> <leader>ct :DotnetTest<CR>
   autocmd FileType cs nnoremap <buffer><silent> <leader>cr :DotnetRun<CR>
+  autocmd FileType cs nnoremap <buffer><silent> <leader>cv :CsharpVimspectorTemplate<CR>
 augroup END
 
 command! DotnetBuild execute 'botright 12split | terminal dotnet build'
 command! DotnetTest execute 'botright 12split | terminal dotnet test'
 command! DotnetRun execute 'botright 12split | terminal dotnet run'
+command! CsharpVimspectorTemplate execute '0read ' . fnameescape(g:vim_config_root . '/templates/vimspector-csharp.json')
