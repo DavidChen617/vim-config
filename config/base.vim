@@ -36,6 +36,11 @@ set number
 set relativenumber
 set cursorline
 
+" Terminal Vim cannot make a single highlight group translucent; use a subtle
+" gray cursor line that works well with translucent terminal windows.
+highlight CursorLine term=NONE cterm=NONE ctermbg=238 gui=NONE guibg=#3a3a3a
+highlight CursorLineNr term=bold cterm=bold ctermfg=250 ctermbg=238 gui=bold guifg=#bcbcbc guibg=#3a3a3a
+
 " Cleaner whitespace display.
 set list
 set listchars=tab:>-,trail:.,extends:>,precedes:<
