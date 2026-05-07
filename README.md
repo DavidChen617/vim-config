@@ -15,8 +15,17 @@ Personal Vim configuration managed as a Git repository.
 
 - Syntax highlighting through Vim syntax/filetype support
 - Completion, hover, diagnostics, rename, code actions and go-to-definition through `coc.nvim` and `coc-pyright`
+- Formatting through `black`
 - Project drawer through `NERDTree`
 - Debug keymaps through `vimspector`
+
+## System Requirements
+
+Install Black for Python formatting:
+
+```sh
+sudo apt-get install black
+```
 
 ## Useful Keys
 

@@ -40,4 +40,8 @@ if [ ! -e "$HOME/.config/coc/extensions/node_modules/coc-pyright/node_modules/py
   ln -s ../../pyright "$HOME/.config/coc/extensions/node_modules/coc-pyright/node_modules/pyright"
 fi
 
+if ! command -v black >/dev/null 2>&1; then
+  printf '%s\n' 'warning: black is not installed. Install it with: sudo apt-get install black' >&2
+fi
+
 python3 "$pack_dir/vimspector/install_gadget.py" --enable-python
