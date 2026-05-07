@@ -23,10 +23,10 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1] =~# '\s'
 endfunction
 
-nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> gy <Plug>(coc-type-definition)
-nnoremap <silent> gi <Plug>(coc-implementation)
-nnoremap <silent> gr <Plug>(coc-references)
+nnoremap <silent> gd :call CocJumpAndRefresh('jumpDefinition')<CR>
+nnoremap <silent> gy :call CocJumpAndRefresh('jumpTypeDefinition')<CR>
+nnoremap <silent> gi :call CocJumpAndRefresh('jumpImplementation')<CR>
+nnoremap <silent> gr :call CocJumpAndRefresh('jumpReferences')<CR>
 nnoremap <silent> K :call ShowDocumentation()<CR>
 nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
 nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -42,4 +42,18 @@ function! ShowDocumentation() abort
   else
     call feedkeys('K', 'in')
   endif
+endfunction
+
+function! CocJumpAndRefresh(action) abort
+  let l:jumped = CocAction(a:action)
+  if l:jumped isnot v:false
+    call timer_start(80, function('CocRefreshFileBuffer'))
+  endif
+endfunction
+
+function! CocRefreshFileBuffer(timer) abort
+  if &buftype ==# '' && expand('%:p') !=# '' && filereadable(expand('%:p'))
+    silent! edit
+  endif
+  redraw!
 endfunction
