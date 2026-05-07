@@ -31,17 +31,31 @@ clone_plugin vimspector https://github.com/puremourning/vimspector.git
 clone_plugin vim-fugitive https://github.com/tpope/vim-fugitive.git
 
 mkdir -p "$HOME/.config/coc/extensions"
-npm install --prefix "$HOME/.config/coc/extensions" coc-pyright coc-json coc-snippets
+npm install --prefix "$HOME/.config/coc/extensions" coc-pyright coc-omnisharp coc-json coc-snippets
 
 # coc-pyright currently looks for pyright under its own extension directory.
 # npm may flatten the dependency to the shared extensions node_modules folder.
 mkdir -p "$HOME/.config/coc/extensions/node_modules/coc-pyright/node_modules"
-if [ ! -e "$HOME/.config/coc/extensions/node_modules/coc-pyright/node_modules/pyright" ]; then
-  ln -s ../../pyright "$HOME/.config/coc/extensions/node_modules/coc-pyright/node_modules/pyright"
-fi
+ln -sfn ../../pyright "$HOME/.config/coc/extensions/node_modules/coc-pyright/node_modules/pyright"
 
 if ! command -v black >/dev/null 2>&1; then
   printf '%s\n' 'warning: black is not installed. Install it with: sudo apt-get install black' >&2
+fi
+
+omnisharp_version="v1.39.15"
+omnisharp_id="262348128"
+omnisharp_url="https://github.com/OmniSharp/omnisharp-roslyn/releases/download/${omnisharp_version}/omnisharp-linux-x64-net6.0.zip"
+omnisharp_data="$HOME/.config/coc/extensions/coc-omnisharp-data"
+omnisharp_zip="$omnisharp_data/server-net6.zip"
+
+if [ ! -x "$omnisharp_data/server/OmniSharp" ]; then
+  mkdir -p "$omnisharp_data/server"
+  curl -L "$omnisharp_url" -o "$omnisharp_zip"
+  unzip -oq "$omnisharp_zip" -d "$omnisharp_data/server"
+  chmod 755 "$omnisharp_data/server/OmniSharp"
+  printf '{"url":"%s","version":"%s","id":%s,"downloadedTime":%s}\n' \
+    "$omnisharp_url" "$omnisharp_version" "$omnisharp_id" "$(date +%s000)" \
+    > "$omnisharp_data/downloadinfo.json"
 fi
 
 python3 "$pack_dir/vimspector/install_gadget.py" --enable-python

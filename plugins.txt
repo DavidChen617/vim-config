@@ -6,6 +6,7 @@ vim-fugitive https://github.com/tpope/vim-fugitive.git
 
 coc extensions:
 coc-pyright
+coc-omnisharp
 coc-json
 coc-snippets
 

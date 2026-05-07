@@ -10,4 +10,6 @@ syntax enable
 filetype plugin indent on
 
 execute 'source ' . fnameescape(g:vim_config_root . '/config/base.vim')
+execute 'source ' . fnameescape(g:vim_config_root . '/config/coc.vim')
 execute 'source ' . fnameescape(g:vim_config_root . '/config/python.vim')
+execute 'source ' . fnameescape(g:vim_config_root . '/config/csharp.vim')

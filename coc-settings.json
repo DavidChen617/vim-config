@@ -4,7 +4,11 @@
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.typeCheckingMode": "basic",
   "python.formatting.provider": "black",
-  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "omnisharp.version": "latest",
+  "omnisharp.path": "/home/davidchen/.config/coc/extensions/coc-omnisharp-data/server/OmniSharp",
+  "omnisharp.trace.server": "information",
+  "omnisharp.debug.server": false,
+  "coc.preferences.formatOnSaveFiletypes": ["python", "cs"],
   "suggest.noselect": false,
   "suggest.enablePreselect": true,
   "diagnostic.virtualText": true
