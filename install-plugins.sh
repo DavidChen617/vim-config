@@ -33,4 +33,11 @@ clone_plugin vim-fugitive https://github.com/tpope/vim-fugitive.git
 mkdir -p "$HOME/.config/coc/extensions"
 npm install --prefix "$HOME/.config/coc/extensions" coc-pyright coc-json coc-snippets
 
+# coc-pyright currently looks for pyright under its own extension directory.
+# npm may flatten the dependency to the shared extensions node_modules folder.
+mkdir -p "$HOME/.config/coc/extensions/node_modules/coc-pyright/node_modules"
+if [ ! -e "$HOME/.config/coc/extensions/node_modules/coc-pyright/node_modules/pyright" ]; then
+  ln -s ../../pyright "$HOME/.config/coc/extensions/node_modules/coc-pyright/node_modules/pyright"
+fi
+
 python3 "$pack_dir/vimspector/install_gadget.py" --enable-python
