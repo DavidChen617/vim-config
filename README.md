@@ -25,6 +25,7 @@ Personal Vim configuration managed as a Git repository.
 ## C# Features
 
 - Completion, hover, diagnostics, rename, code actions and go-to-definition through `coc.nvim` and `coc-omnisharp`
+- Metadata/definition preview for external .NET assemblies through `OmniSharp-vim`
 - Formatting through OmniSharp/Coc
 - Project commands through `dotnet`
 - Debugging through `vimspector` and `netcoredbg`
@@ -36,6 +37,7 @@ Useful C# keys:
 - `<Space>cr`: `dotnet run`
 - `<Space>p`: format C# buffer
 - `<Space>cv`: insert a C# `.vimspector.json` template into the current buffer
+- `<Space>cp`: preview C# definition/metadata without leaving the current file
 
 C# debug expects the project to be built first. Copy
 `templates/vimspector-csharp.json` to `.vimspector.json` in the project root and
@@ -56,6 +58,10 @@ dotnet --info
 dotnet new sln
 dotnet sln add path/to/project.csproj
 ```
+
+Modern `.slnx` projects are accepted as workspace roots. OmniSharp-vim is
+started from the `.slnx` directory because older OmniSharp tooling does not
+directly recognize `.slnx` as a solution file.
 
 ## Useful Keys
 

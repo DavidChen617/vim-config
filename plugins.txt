@@ -3,6 +3,7 @@ nerdtree https://github.com/preservim/nerdtree.git
 nerdtree-git-plugin https://github.com/Xuyuanp/nerdtree-git-plugin.git
 vimspector https://github.com/puremourning/vimspector.git
 vim-fugitive https://github.com/tpope/vim-fugitive.git
+omnisharp-vim https://github.com/OmniSharp/omnisharp-vim.git
 
 coc extensions:
 coc-pyright

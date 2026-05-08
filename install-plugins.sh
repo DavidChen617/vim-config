@@ -29,6 +29,7 @@ clone_plugin nerdtree https://github.com/preservim/nerdtree.git
 clone_plugin nerdtree-git-plugin https://github.com/Xuyuanp/nerdtree-git-plugin.git
 clone_plugin vimspector https://github.com/puremourning/vimspector.git
 clone_plugin vim-fugitive https://github.com/tpope/vim-fugitive.git
+clone_plugin omnisharp-vim https://github.com/OmniSharp/omnisharp-vim.git
 
 mkdir -p "$HOME/.config/coc/extensions"
 npm install --prefix "$HOME/.config/coc/extensions" coc-pyright coc-omnisharp coc-json coc-snippets
