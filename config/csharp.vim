@@ -7,11 +7,25 @@ let g:OmniSharp_server_use_net6 = 1
 let g:OmniSharp_server_path = '/home/davidchen/.config/coc/extensions/coc-omnisharp-data/server/OmniSharp'
 let g:OmniSharp_start_server = 1
 let g:OmniSharp_lookup_metadata = 1
-let g:OmniSharp_highlighting = 0
+let g:OmniSharp_highlighting = 2
 let g:OmniSharp_diagnostic_listen = 0
 let g:OmniSharp_open_quickfix = 0
 let g:OmniSharp_selector_ui = ''
 let g:OmniSharp_loglevel = 'warning'
+let g:OmniSharp_highlight_groups = {
+      \ 'ClassName': 'Type',
+      \ 'StructName': 'Type',
+      \ 'InterfaceName': 'Include',
+      \ 'EnumName': 'Structure',
+      \ 'DelegateName': 'Function',
+      \ 'MethodName': 'Function',
+      \ 'ExtensionMethodName': 'Function',
+      \ 'PropertyName': 'Identifier',
+      \ 'FieldName': 'Identifier',
+      \ 'NamespaceName': 'Include',
+      \ 'ParameterName': 'Identifier',
+      \ 'LocalName': 'Identifier',
+      \ }
 
 function! CsharpFindOmniSharpRoot(bufnr) abort
   let l:dir = fnamemodify(bufname(a:bufnr), ':p:h')
