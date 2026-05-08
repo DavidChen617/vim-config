@@ -48,6 +48,17 @@ try
 catch /^Vim\%((\a\+)\)\=:E185/
 endtry
 
+" Keep the terminal background visible instead of forcing the theme background.
+highlight Normal term=NONE cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+highlight NormalNC term=NONE cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+highlight SignColumn term=NONE cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+highlight LineNr term=NONE cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+highlight FoldColumn term=NONE cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+highlight EndOfBuffer term=NONE cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+highlight VertSplit term=NONE cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+highlight StatusLine term=NONE cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+highlight StatusLineNC term=NONE cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+
 " Terminal Vim cannot make a single highlight group translucent; use a subtle
 " gray cursor line that works well with translucent terminal windows.
 highlight CursorLine term=NONE cterm=NONE ctermbg=238 gui=NONE guibg=#3a3a3a
