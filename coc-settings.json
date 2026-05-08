@@ -11,10 +11,5 @@
   "coc.preferences.formatOnSaveFiletypes": ["python", "cs"],
   "suggest.noselect": false,
   "suggest.enablePreselect": true,
-  "diagnostic.virtualText": true,
-  "hover.floatConfig": {
-    "border": false,
-    "maxWidth": 100,
-    "maxHeight": 20
-  }
+  "diagnostic.virtualText": true
 }
