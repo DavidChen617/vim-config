@@ -36,6 +36,18 @@ set number
 set relativenumber
 set cursorline
 
+" Color theme. The package is installed by install-plugins.sh; keep a quiet
+" fallback so Vim still opens before plugins are installed.
+if has('termguicolors')
+  set termguicolors
+endif
+set background=dark
+silent! packadd vim-code-dark
+try
+  colorscheme codedark
+catch /^Vim\%((\a\+)\)\=:E185/
+endtry
+
 " Terminal Vim cannot make a single highlight group translucent; use a subtle
 " gray cursor line that works well with translucent terminal windows.
 highlight CursorLine term=NONE cterm=NONE ctermbg=238 gui=NONE guibg=#3a3a3a
