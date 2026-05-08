@@ -44,6 +44,8 @@ augroup END
 
 augroup csharp_dotnet_commands
   autocmd!
+  autocmd FileType cs nnoremap <buffer><silent> gd :OmniSharpGotoDefinition<CR>
+  autocmd FileType cs nnoremap <buffer><silent> gy :OmniSharpGotoTypeDefinition<CR>
   autocmd FileType cs nnoremap <buffer><silent> <leader>cb :DotnetBuild<CR>
   autocmd FileType cs nnoremap <buffer><silent> <leader>ct :DotnetTest<CR>
   autocmd FileType cs nnoremap <buffer><silent> <leader>cr :DotnetRun<CR>

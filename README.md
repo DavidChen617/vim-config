@@ -32,6 +32,8 @@ Personal Vim configuration managed as a Git repository.
 
 Useful C# keys:
 
+- `gd`: go to definition through OmniSharp-vim, including metadata fallback
+- `gy`: go to type definition through OmniSharp-vim
 - `<Space>cb`: `dotnet build`
 - `<Space>ct`: `dotnet test`
 - `<Space>cr`: `dotnet run`
