@@ -11,9 +11,9 @@
   "coc.preferences.formatOnSaveFiletypes": ["python", "cs"],
   "suggest.noselect": false,
   "suggest.enablePreselect": true,
-  "suggest.labelMaxLength": 60,
+  "suggest.labelMaxLength": 100,
   "suggest.floatConfig": {
-    "maxWidth": 90,
+    "maxWidth": 65,
     "maxHeight": 20
   },
   "diagnostic.virtualText": true
