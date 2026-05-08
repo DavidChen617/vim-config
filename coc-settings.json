@@ -10,6 +10,7 @@
   "omnisharp.debug.server": false,
   "coc.preferences.formatOnSaveFiletypes": ["python", "cs"],
   "suggest.noselect": false,
+  "suggest.enableFloat": true,
   "suggest.enablePreselect": true,
   "diagnostic.virtualText": true
 }
