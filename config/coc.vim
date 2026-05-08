@@ -45,7 +45,19 @@ function! ShowDocumentation() abort
 endfunction
 
 function! CocJumpAndRefresh(action) abort
-  let l:jumped = CocAction(a:action)
+  try
+    let l:jumped = CocAction(a:action)
+  catch
+    echohl WarningMsg
+    if v:exception =~# 'provider not found'
+      echom 'Coc provider not available for this buffer.'
+    else
+      echom 'Coc jump failed: ' . v:exception
+    endif
+    echohl None
+    return
+  endtry
+
   if l:jumped isnot v:false
     call timer_start(80, function('CocRefreshFileBuffer'))
   endif
