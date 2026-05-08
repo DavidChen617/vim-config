@@ -1,7 +1,7 @@
 " C# IDE configuration.
 
-" OmniSharp-vim is used only as a metadata/definition preview helper.
-" Coc remains responsible for completion, diagnostics, formatting and jumps.
+" OmniSharp-vim handles C# definition navigation, including metadata.
+" Coc remains responsible for completion, diagnostics and formatting.
 let g:OmniSharp_server_stdio = 1
 let g:OmniSharp_server_use_net6 = 1
 let g:OmniSharp_server_path = '/home/davidchen/.config/coc/extensions/coc-omnisharp-data/server/OmniSharp'
