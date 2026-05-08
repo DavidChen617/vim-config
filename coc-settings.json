@@ -11,10 +11,10 @@
   "coc.preferences.formatOnSaveFiletypes": ["python", "cs"],
   "suggest.noselect": false,
   "suggest.enablePreselect": true,
-  "suggest.formatItems": ["abbr", "kind"],
-  "suggest.labelMaxLength": 100,
+  "suggest.detailField": "abbr",
+  "suggest.labelMaxLength": 140,
   "suggest.floatConfig": {
-    "maxWidth": 55,
+    "maxWidth": 70,
     "maxHeight": 20
   },
   "diagnostic.virtualText": true
