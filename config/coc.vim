@@ -19,7 +19,7 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " Give the completion list enough room for method names.
-set pumwidth=55
+set pumwidth=70
 set pumheight=12
 
 function! CheckBackspace() abort
