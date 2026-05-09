@@ -9,7 +9,6 @@
   "omnisharp.trace.server": "information",
   "omnisharp.debug.server": false,
   "coc.preferences.formatOnSaveFiletypes": ["python", "cs", "c"],
-  "clangd.path": "clangd",
   "suggest.noselect": false,
   "suggest.enableFloat": true,
   "suggest.enablePreselect": true,
