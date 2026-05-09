@@ -34,7 +34,7 @@ clone_plugin vim-code-dark https://github.com/tomasiser/vim-code-dark.git
 clone_plugin vim-polyglot https://github.com/sheerun/vim-polyglot.git
 
 mkdir -p "$HOME/.config/coc/extensions"
-npm install --prefix "$HOME/.config/coc/extensions" coc-pyright coc-omnisharp coc-json coc-snippets
+npm install --prefix "$HOME/.config/coc/extensions" coc-pyright coc-omnisharp coc-json coc-snippets coc-clangd
 
 # coc-pyright currently looks for pyright under its own extension directory.
 # npm may flatten the dependency to the shared extensions node_modules folder.
@@ -43,6 +43,18 @@ ln -sfn ../../pyright "$HOME/.config/coc/extensions/node_modules/coc-pyright/nod
 
 if ! command -v black >/dev/null 2>&1; then
   printf '%s\n' 'warning: black is not installed. Install it with: sudo apt-get install black' >&2
+fi
+
+if ! command -v clangd >/dev/null 2>&1; then
+  printf '%s\n' 'warning: clangd is not installed. Install it with: sudo apt-get install clangd' >&2
+fi
+
+if ! command -v clang-format >/dev/null 2>&1; then
+  printf '%s\n' 'warning: clang-format is not installed. Install it with: sudo apt-get install clang-format' >&2
+fi
+
+if ! command -v gdb >/dev/null 2>&1; then
+  printf '%s\n' 'warning: gdb is not installed. Install it with: sudo apt-get install gdb' >&2
 fi
 
 omnisharp_version="v1.39.15"
@@ -61,4 +73,4 @@ if [ ! -x "$omnisharp_data/server/OmniSharp" ]; then
     > "$omnisharp_data/downloadinfo.json"
 fi
 
-python3 "$pack_dir/vimspector/install_gadget.py" --enable-python --force-enable-csharp
+python3 "$pack_dir/vimspector/install_gadget.py" --enable-python --force-enable-csharp --enable-c

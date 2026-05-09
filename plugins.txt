@@ -12,7 +12,10 @@ coc-pyright
 coc-omnisharp
 coc-json
 coc-snippets
+coc-clangd
 
 vimspector gadgets:
 debugpy
 netcoredbg
+vscode-cpptools
+CodeLLDB

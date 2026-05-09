@@ -1,0 +1,15 @@
+{
+  "configurations": {
+    "Launch C program": {
+      "adapter": "CodeLLDB",
+      "configuration": {
+        "type": "lldb",
+        "request": "launch",
+        "program": "${workspaceRoot}/CHANGE_ME",
+        "args": [],
+        "cwd": "${workspaceRoot}",
+        "stopOnEntry": false
+      }
+    }
+  }
+}
