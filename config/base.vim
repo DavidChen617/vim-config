@@ -76,3 +76,45 @@ let maplocalleader = ','
 nnoremap <silent> <leader><space> :nohlsearch<CR>
 nnoremap <silent> <leader>w :write<CR>
 nnoremap <silent> <leader>q :quit<CR>
+
+" Copy visually selected text to the host clipboard through OSC52.
+function! s:CopyTextOsc52(text) abort
+  let l:text = a:text
+  if empty(l:text)
+    echohl WarningMsg
+    echom 'No text selected for OSC52 copy.'
+    echohl None
+    return
+  endif
+
+  let l:encoded = system('base64 -w0', l:text)
+  if v:shell_error
+    echohl ErrorMsg
+    echom 'OSC52 copy failed: base64 command failed.'
+    echohl None
+    return
+  endif
+
+  call system("printf '\\033]52;c;%s\\a' " . shellescape(l:encoded) . " > /dev/tty")
+  if v:shell_error
+    echohl ErrorMsg
+    echom 'OSC52 copy failed: could not write to /dev/tty.'
+    echohl None
+    return
+  endif
+
+  echom 'Copied to host clipboard.'
+endfunction
+
+function! s:CopyVisualSelectionOsc52() abort
+  let l:save_reg = getreg('"')
+  let l:save_regtype = getregtype('"')
+
+  silent normal! gvy
+  let l:text = getreg('"')
+
+  call setreg('"', l:save_reg, l:save_regtype)
+  call s:CopyTextOsc52(l:text)
+endfunction
+
+xnoremap <silent> <leader>y :<C-u>call <SID>CopyVisualSelectionOsc52()<CR>

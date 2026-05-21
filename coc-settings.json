@@ -12,5 +12,6 @@
   "suggest.noselect": false,
   "suggest.enableFloat": true,
   "suggest.enablePreselect": true,
-  "diagnostic.virtualText": true
+  "diagnostic.virtualText": true,
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/22.1.0/clangd_22.1.0/bin/clangd"
 }
