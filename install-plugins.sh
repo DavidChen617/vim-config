@@ -2,7 +2,7 @@
 set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-pack_dir="$root/pack/codex/start"
+pack_dir="$root/pack/plugins/start"
 
 mkdir -p "$pack_dir"
 

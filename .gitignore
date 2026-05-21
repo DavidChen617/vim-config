@@ -1,4 +1,4 @@
-pack/codex/start/*
+pack/plugins/start/*
 .venv-tools/
 *.swp
 *.swo
